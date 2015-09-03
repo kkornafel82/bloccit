@@ -1,6 +1,7 @@
-## Bloccit: a Reddit replica to teach the fundamentals of web development and Rails.
+## Kornafel-Bloccit: a Reddit replica to teach the fundamentals of web development and Rails.
 
 Made with my mentor at [Bloc](http://bloc.io).
+This app can be found at: (https://kornafel-bloccit.herokuapp.com/)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
