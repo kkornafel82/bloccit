@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  
+  skip_before_action :flash_attack, :except => [:create, :show, :update, :edit]
+
+
   def index
     @posts = Post.all
   end
