@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  #resources :posts do
+   #   resources :summaries
+  #end
+
+  resources :summaries
+
   devise_for :users
 
   resources :topics do
