@@ -1,15 +1,27 @@
 require 'faker'
 
-# Create Users
- 5.times do
-   user = User.new(
-     name:     Faker::Name.name,
-     email:    Faker::Internet.email,
-     password: Faker::Lorem.characters(10)
-   )
-   user.skip_confirmation!
-   user.save!
- end
+ #Create Users
+  
+ 1.times do 
+  user = User.new(
+    name:   "Kevin",
+    email:  "kkornafel82@yahoo.com",
+    password: "terrapin"
+    )
+
+  user.skip_confirmation!
+  user.save!
+end
+
+ #1.times do
+  # user = User.new(
+    # name:     Faker::Name.name,
+     #email:    Faker::Internet.email,
+     #password: Faker::Lorem.characters(10)
+  # )
+   #user.skip_confirmation!
+   #user.save!
+ #end
  users = User.all
 
  # Create Topics
