@@ -1,5 +1,16 @@
 class PostsController < ApplicationController
+
   
+
+  #def markdown_title
+   # render_as_markdown(markdown)
+  #end
+
+  #def markdown_body
+   # @post = Post.find(params[:id])
+    #render_as_markdown(@post)
+  #end
+
 
   def show
     @post = Post.find(params[:id])
@@ -45,12 +56,34 @@ class PostsController < ApplicationController
       flash[:error] = "There was an error saving the post. Please try again."
       render :edit
     end
+
+    
   end
 
 
   private
 
+  def render_as_markdown
+    markdown_to_html
+    end
+
   def post_params
    params.require(:post).permit(:title, :body)
   end
+
+  
+
+  
+
 end
+
+
+
+
+
+
+
+
+
+
+
