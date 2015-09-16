@@ -1,17 +1,6 @@
 class PostsController < ApplicationController
 
   
-
-  #def markdown_title
-   # render_as_markdown(markdown)
-  #end
-
-  #def markdown_body
-   # @post = Post.find(params[:id])
-    #render_as_markdown(@post)
-  #end
-
-
   def show
     @post = Post.find(params[:id])
     @topic = Topic.find(params[:topic_id])
@@ -63,7 +52,7 @@ class PostsController < ApplicationController
 
   private
 
-  def render_as_markdown
+  def render_as_markdown(markdown)
   renderer = Redcarpet::Render::HTML.new
   extensions = {fenced_code_blocks: true}
   redcarpet = Redcarpet::Markdown.new(renderer, extensions)
