@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
+  has_many :comments
 
   def admin?
    role == 'admin'
@@ -12,5 +13,10 @@ class User < ActiveRecord::Base
   def moderator?
    role == 'moderator'
   end
+
+  def comments
+    self.comments
+  end
+
 
 end
