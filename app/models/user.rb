@@ -14,9 +14,4 @@ class User < ActiveRecord::Base
    role == 'moderator'
   end
 
-  def comments
-    self.comments
-  end
-
-
 end
