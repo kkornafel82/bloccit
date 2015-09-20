@@ -65,3 +65,7 @@ gem  'carrierwave'
 gem  'mini_magick'
 gem  'fog'
 
+group :development, :test do
+  gem  'rspec-rails', '~> 3.0'
+end
+
