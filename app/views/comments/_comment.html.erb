@@ -5,4 +5,7 @@
       <em><%= comment.user.name || comment.user.email %></em>
     </small>
   <% end %>
+  <% if policy(comment).destroy? %>
+        | <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
+  <% end %>
 </p>

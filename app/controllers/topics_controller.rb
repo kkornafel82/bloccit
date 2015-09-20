@@ -31,16 +31,28 @@ class TopicsController < ApplicationController
      end
    end
  
-   def update
+  def update
      @topic = Topic.new(topic_params)
      authorize @topic
-     if @topic.update_attributes(params.require(:topic).permit(:name, :description, :public))
-       redirect_to @topic
-     else
-       flash[:error] = "Error saving topic. Please try again."
-       render :edit
+    if @topic.update_attributes(params.require(:topic).permit(:name, :description, :public))
+      redirect_to @topic
+    else
+      flash[:error] = "Error saving topic. Please try again."
+      render :edit
      end
-   end
+  end
+
+  def destroy
+    @topic = Topic.find(params[:id])
+    authorize @topic
+    if @topic.destroy
+       flash[:notice] = "\"#{@topic.name}\" was deleted successfully."
+       redirect_to topics_path
+     else
+       flash[:error] = "There was an error deleting the topic."
+       render :show
+     end
+  end
 
    private
 
