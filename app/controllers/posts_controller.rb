@@ -8,6 +8,8 @@ class PostsController < ApplicationController
     @comment = @post.comments.build
     #@comment = Comment.find(params[:comment_id]) 
     authorize @post
+    authorize @topic
+
     
   end
 
