@@ -6,4 +6,21 @@ FactoryGirl.define do
      password_confirmation "helloworld"
      confirmed_at Time.now
    end
+
+   FactoryGirl.define do
+  factory :user_with_post_and_comment do
+    first_name "John"
+    last_name  "Doe"
+    admin false
+
+    after(:build) do |comment|
+       comment.class.skip_callback(:create, :after, :send_favorite_emails)
+     end
+
+     after(:build) do |post|
+       post.class.skip_callback(:create, :after, :send_favorite_emails)
+     end
+  
+    
+  end
  end
