@@ -6,6 +6,6 @@
     </small>
   <% end %>
   <% if policy(comment).destroy? %>
-        | <%= link_to "Delete", [comment.post, comment], method: :delete %>
+      <%= link_to "Delete", [comment.post, comment], method: :delete, remote: true %>
   <% end %>
 </p>
