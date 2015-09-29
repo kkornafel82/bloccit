@@ -39,5 +39,30 @@
        expect( users.first.comments_count ).to eq(2)
      end
    end
-    
+     describe ":user_with_post_and_comment" do
+          before do
+            user = create(:user_with_post_and_comment)
+          end
+      it "creates a user with a post and comment" do
+        user = create(:user_with_post_and_comment)
+
+        
+        expect(user.name).to eq("Douglas Adams")
+      end
+    end
+
+
  end
+
+
+
+
+
+
+
+
+
+
+
+
+
